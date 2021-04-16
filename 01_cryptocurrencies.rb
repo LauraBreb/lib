@@ -20,6 +20,7 @@ end
 def exo_2(price,money)
     price = price_float(price)
     merged_arrays = get_hash(money,price)
+    sort_price = price.sort
     puts merged_arrays.find {|k,v| v == sort_price.first}
 end
 
@@ -27,7 +28,7 @@ def exo_3(price,money)
     price = price_float(price)
     merged_arrays = get_hash(money,price)
     selected_merged_arrays = merged_arrays.select {|k,v| v<6000}
-    puts selected_merged_arrays
+    puts selected_merged_arrays.keys
 end
 
 def array_selection(price,money)
@@ -40,7 +41,8 @@ end
 def exo_4(price,money)
     selected_merged_arrays = array_selection(price,money)
     sort_array = selected_merged_arrays.values.sort
-    puts selected_merged_arrays.find {|k,v| v==sort_array.last}
+    final_hash = selected_merged_arrays.select {|k,v| v==sort_array.last}
+    puts final_hash.keys
 end
 
 # <---------------------------------------------------------------------------->
